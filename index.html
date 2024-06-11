@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+<!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>BS-PLCNet 2: Two-stage Band-split Packet Loss Concealment Network with Intra-model Knowledge Distillation</title>
+<meta name="generator" content="Jekyll v3.9.0">
+<meta property="og:title" content="TODO: title">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://zzhdzdz.github.io/BS-PLCNet2/">
+<meta property="og:url" content="https://zzhdzdz.github.io/BS-PLCNet2/">
+<meta name="twitter:card" content="summary">
+<!-- End Jekyll SEO tag -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#157878">
+    <link rel="stylesheet" href="./bsplcnet_files/style.css">
+  </head>
+  <body data-new-gr-c-s-check-loaded="14.1001.0" data-gr-ext-installed="">
+    <section class="page-header">
+      
+    </section>
+
+<section class="main-content">
+      <h1 id=""><center>BS-PLCNet 2: Two-stage Band-split Packet Loss Concealment Network <br> with Intra-model Knowledge Distillation
+	  </center></h1>
+
+
+<h2>0. Contents</h2>
+<ol>
+  <li><a href="https://zzhdzdz.github.io/BS-PLCNet2/#abstract">Abstract</a></li>
+  <li><a href="zzhdzdz.github.io/BS-PLCNet2/#samples">Samples of 2024 PLC Challenge blind test set</a></li>
+</ol>
+
+<br><br>
+<h2 id="abstract">1. Abstract<a name="abstract"></a></h2>
+<p> 
+  Audio packet loss is an inevitable problem in real-time speech communication. A band-split packet loss concealment network (BS-PLCNet) targeting full-band signals was recently proposed. Although it performs superiorly in the ICASSP 2024 PLC Challenge, BS-PLCNet is a large model with high computational complexity of 8.95G FLOPS. This paper presents its updated version, BS-PLCNet 2, to reduce computational complexity and improve performance further. Specifically, to compensate for the missing future information, in the wide-band module, we design a dual-path encoder structure (with non-causal and causal path) and leverage an intra-model knowledge distillation strategy to distill the future information from the non-causal teacher to the casual student. Moreover, we introduce a lightweight post-processing module after packet loss restoration to recover speech distortions and remove residual noise in the audio signal. With only 40% of original parameters in BS-PLCNet, BS-PLCNet 2  brings 0.18 PLCMOS improvement on the ICASSP 2024 PLC challenge blind set, achieving state-of-the-art performance on this dataset.
+  <br>
+	<center><img src="./bsplcnet_files/1.png" style="height:300px"/></center>
+<br><br>
+
+
+
+
+<h2>Samples of 2024 PLC Challenge blind test set<a name="samples"></a></h2>
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Models</strong></th>
+      <th style="text-align: center"><strong>Sample 1</strong></th>
+      <th style="text-align: center"><strong>Sample 2</strong></th>
+      <th style="text-align: center"><strong>Sample 3</strong></th>
+      <th style="text-align: center"><strong>Sample 4</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Lossy</td>
+      <td style="text-align: left"><audio src="exp/wav/sample1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample3.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample4.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BS-PLCNet</td>
+      <td style="text-align: left"><audio src="exp/wav/sample1_bs1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample2_bs1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample3_bs1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample4_bs1.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BS-PLCNet 2</td>
+      <td style="text-align: left"><audio src="exp/wav/sample1_bs2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample2_bs2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample3_bs2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample4_bs2.wav" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center"><strong>Models</strong></th>
+      <th style="text-align: center"><strong>Sample 5</strong></th>
+      <th style="text-align: center"><strong>Sample 6</strong></th>
+      <th style="text-align: center"><strong>Sample 7</strong></th>
+      <th style="text-align: center"><strong>Sample 8</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">Lossy</td>
+      <td style="text-align: left"><audio src="exp/wav/sample5.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample6.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample7.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample8.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BS-PLCNet</td>
+      <td style="text-align: left"><audio src="exp/wav/sample5_bs1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample6_bs1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample7_bs1.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample8_bs1.wav" controls="" preload=""></audio></td>
+    </tr>
+    <tr>
+      <td style="text-align: left">BS-PLCNet 2</td>
+      <td style="text-align: left"><audio src="exp/wav/sample5_bs2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample6_bs2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample7_bs2.wav" controls="" preload=""></audio></td>
+      <td style="text-align: left"><audio src="exp/wav/sample8_bs2.wav" controls="" preload=""></audio></td>
+    </tr>
+  </tbody>
+</table>
+<br><br>
+
+
+
+</table>
+      <footer class="site-footer">
+        <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com/">GitHub Pages</a>.</span>
+      </footer>
+    </section>
+
+</body></html>
